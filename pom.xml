@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ts-custom-samples</groupId>
+  <artifactId>ts-cistom-samples</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Testsigma Custom cunctions samples</name>
+  
+    <properties>
+    	<jdk.version>1.8</jdk.version>
+		<selenium.version>3.0.1</selenium.version>		
+		<json.version>20160810</json.version>		
+		<jetty-io.version>9.4.0.RC0</jetty-io.version>
+		<maven.compiler.plugin>3.5.1</maven.compiler.plugin>	
+		<commons.collections.version>3.2.1</commons.collections.version>
+	</properties>
+	
+	  <dependencies>
+	  
+	  	<!--  dependency>
+		    <groupId>ts-custom-functions</groupId>
+		    <artifactId>ts-custom-functions</artifactId>
+		    <version>0.0.1-SNAPSHOT</version>
+		    <scope>provided</scope>
+		</dependency-->
+			
+			
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>${selenium.version}</version>
+			<exclusions>
+				<!-- Exclude Commons Logging in favor of SLF4j -->
+				  <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
+                </exclusion>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>servlet-api</artifactId>
+				</exclusion>				
+			</exclusions>
+		</dependency>
+		<dependency>
+		    <groupId>org.eclipse.jetty</groupId>
+		    <artifactId>jetty-io</artifactId>
+		    <version>${jetty-io.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.eclipse.jetty.websocket</groupId>
+		    <artifactId>websocket-server</artifactId>
+		    <version>${jetty-io.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>commons-collections</groupId>
+		    <artifactId>commons-collections</artifactId>
+		    <version>${commons.collections.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>${json.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
+		<dependency>
+		    <groupId>org.apache.pdfbox</groupId>
+		    <artifactId>pdfbox</artifactId>
+		    <version>2.0.8</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.pdfbox/fontbox -->
+		<dependency>
+		    <groupId>org.apache.pdfbox</groupId>
+		    <artifactId>fontbox</artifactId>
+		    <version>2.0.8</version>
+		</dependency>
+		
+
+	</dependencies>
+	
+	<build>
+	    <plugins>
+	      <plugin>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>${maven.compiler.plugin}</version>
+	        <configuration>
+	          <source>${jdk.version}</source>
+	          <target>${jdk.version}</target>
+	        </configuration>
+	      </plugin>
+	    </plugins>
+  	</build>
+  
+</project>
