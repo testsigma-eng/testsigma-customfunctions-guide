@@ -2,6 +2,7 @@ package com.testsigma.customfunc.web.examples;
 
 import org.json.JSONArray;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.UnreachableBrowserException;
@@ -77,6 +78,18 @@ public class CustomSteps {
 		  
 		   return result;
 	  
+	  }
+	 @CustomTestStep
+	  public TeststepResult attributeValue() {
+	  TeststepResult result= new TeststepResult();
+	   	JavascriptExecutor js = (JavascriptExecutor) webdriver;
+	   // getElementById('u_0_11')= getting value for same element
+	   	//change element type and value, id = attribute here, changing id value to 300
+	   	
+		js .executeScript("document.getElementById('u_0_11').setAttribute('id', '300')");
+		result.setStatus(0);
+	    result.setMessage("custom step Executed successfully");
+	   return result;
 	  }
 	
 		
