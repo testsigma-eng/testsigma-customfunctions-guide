@@ -1,4 +1,4 @@
-package com.testsigma.customfunc.common;
+package com.testsigma.customfunc.result;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;

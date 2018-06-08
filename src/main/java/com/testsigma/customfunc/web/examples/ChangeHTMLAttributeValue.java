@@ -4,7 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.testsigma.customfunc.common.CustomTestStep;
-import com.testsigma.customfunc.common.TeststepResult;
+import com.testsigma.customfunc.result.TeststepResult;
 
 public class ChangeHTMLAttributeValue {
 	protected WebDriver webdriver;

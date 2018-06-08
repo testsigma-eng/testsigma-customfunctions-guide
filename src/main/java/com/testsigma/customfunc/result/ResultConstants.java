@@ -1,9 +1,9 @@
-package com.testsigma.customfunc.common;
+package com.testsigma.customfunc.result;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public enum ResultConsts {
+public enum ResultConstants {
 	SUCCESS(0, "Passed"),
 	FAILURE(1,"Failed"),
 	ABORTED(2,"Aborted"),
@@ -14,7 +14,7 @@ public enum ResultConsts {
 	
 	private Integer id;
 	private String actName;
-	ResultConsts(Integer type, String actName){
+	ResultConstants(Integer type, String actName){
 		this.id = type;
 		this.actName = actName;
 	}
@@ -27,7 +27,7 @@ public enum ResultConsts {
 		return actName;
 	}
 	
-	public static ResultConsts getStatus(Integer id){
+	public static ResultConstants getStatus(Integer id){
 		switch(id){
 			case 0:
 				return SUCCESS;
@@ -50,7 +50,7 @@ public enum ResultConsts {
 	
 	public static Map<Integer, String> getDispNameMap(){
 		Map<Integer, String> toReturn = new HashMap<Integer, String>();
-		for(ResultConsts type : ResultConsts.values()){
+		for(ResultConstants type : ResultConstants.values()){
 			toReturn.put(type.getId(), type.getActName());
 		}
 		return toReturn;

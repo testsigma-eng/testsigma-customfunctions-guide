@@ -7,9 +7,8 @@ import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 
 import com.testsigma.customfunc.common.CustomTestStep;
-import com.testsigma.customfunc.common.ResultConstants;
-import com.testsigma.customfunc.common.ResultConsts;
-import com.testsigma.customfunc.common.TeststepResult;
+import com.testsigma.customfunc.result.ResultConstants;
+import com.testsigma.customfunc.result.TeststepResult;
 
 
 public class CustomSteps {
@@ -39,14 +38,14 @@ public class CustomSteps {
 			
 			webdriver.navigate().to(param1);
 			
-			result.setStatus(ResultConstants.SUCCESS);
+			result.setStatus(ResultConstants.SUCCESS.getId());
 			result.setMessage("Successfully Executed");
 			
-		} catch(UnreachableBrowserException e){
-			result.setStatus(ResultConstants.FAILURE);	
+		} catch(UnreachableBrowserException e) {
+			result.setStatus(ResultConstants.FAILURE.getId());	
 			result.setMessage("Unreachable Browser Exception"+ e.getMessage());
 		} catch(WebDriverException e){
-			result.setStatus(ResultConstants.FAILURE);
+			result.setStatus(ResultConstants.FAILURE.getId());
 			result.setMessage("Web Driver exception" + e.getMessage());
 		}
 		
@@ -68,10 +67,10 @@ public class CustomSteps {
 		//Change locator type(Id,className, Xpath .....etc) as per your requirement	`
 		//Size means Elements count
 		if(webdriver.findElements(By.xpath(locator)).size()==size) {
-			 result.setStatus(ResultConsts.SUCCESS.getId());
+			 result.setStatus(ResultConstants.SUCCESS.getId());
 			 result.setMessage("custom step Executed successfully");
 		} else {
-			result.setStatus(ResultConsts.FAILURE.getId());
+			result.setStatus(ResultConstants.FAILURE.getId());
 			result.setMessage("custom step Executed Failed");
 		}
 		  
