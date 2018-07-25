@@ -7,7 +7,8 @@
   
     <properties>
     	<jdk.version>1.8</jdk.version>
-		<selenium.version>3.0.1</selenium.version>		
+		<selenium.version>3.0.1</selenium.version>	
+		<appium.version>5.0.4</appium.version>	
 		<json.version>20160810</json.version>		
 		<jetty-io.version>9.4.0.RC0</jetty-io.version>
 		<maven.compiler.plugin>3.5.1</maven.compiler.plugin>	
@@ -56,6 +57,12 @@
 		    <groupId>commons-collections</groupId>
 		    <artifactId>commons-collections</artifactId>
 		    <version>${commons.collections.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>${appium.version}</version>
 		</dependency>
 		
 		<dependency>

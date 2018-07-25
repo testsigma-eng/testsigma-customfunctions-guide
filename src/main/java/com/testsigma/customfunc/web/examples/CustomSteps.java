@@ -2,14 +2,13 @@ package com.testsigma.customfunc.web.examples;
 
 import org.json.JSONArray;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 
 import com.testsigma.customfunc.common.CustomTestStep;
 import com.testsigma.customfunc.result.ResultConstants;
-import com.testsigma.customfunc.result.TeststepResult;
+import com.testsigma.customfunc.result.TestStepResult;
 
 
 public class CustomSteps {
@@ -20,9 +19,9 @@ public class CustomSteps {
 		this.webdriver = webdriver;
 	}
 	
-	public TeststepResult gotoPage(JSONArray arr){
+	public TestStepResult gotoPage(JSONArray arr){
 		
-		TeststepResult result = new TeststepResult();
+		TestStepResult result = new TestStepResult();
 		try {
 			//JSONArray arr = new JSONArray(json.toString());
 
@@ -39,14 +38,14 @@ public class CustomSteps {
 			
 			webdriver.navigate().to(param1);
 			
-			result.setStatus(ResultConstants.SUCCESS.getId());
+			result.setStatus(ResultConstants.SUCCESS);
 			result.setMessage("Successfully Executed");
 			
 		} catch(UnreachableBrowserException e){
-			result.setStatus(ResultConstants.FAILURE.getId());	
+			result.setStatus(ResultConstants.FAILURE);	
 			result.setMessage("Unreachable Browser Exception"+ e.getMessage());
 		} catch(WebDriverException e){
-			result.setStatus(ResultConstants.FAILURE.getId());
+			result.setStatus(ResultConstants.FAILURE);
 			result.setMessage("Web Driver exception" + e.getMessage());
 		}
 		
@@ -63,32 +62,20 @@ public class CustomSteps {
 	
 	//This Step is verify no.of displayed elements with your expected count elements
 	@CustomTestStep
-	public TeststepResult verifyElementsCount(String locator,int size) {
-		TeststepResult result= new TeststepResult();
+	public TestStepResult verifyElementsCount(String locator,int size) {
+		TestStepResult result= new TestStepResult();
 		//Change locator type(Id,className, Xpath .....etc) as per your requirement	`
 		//Size means Elements count
 		if(webdriver.findElements(By.xpath(locator)).size()==size) {
-			 result.setStatus(ResultConstants.SUCCESS.getId());
+			 result.setStatus(ResultConstants.SUCCESS);
 			 result.setMessage("custom step Executed successfully");
 		} else {
-			result.setStatus(ResultConstants.FAILURE.getId());
+			result.setStatus(ResultConstants.FAILURE);
 			result.setMessage("custom step Executed Failed");
 		}
 		  
 		   return result;
 	  
-	  }
-	 @CustomTestStep
-	  public TeststepResult attributeValue() {
-	  TeststepResult result= new TeststepResult();
-	   	JavascriptExecutor js = (JavascriptExecutor) webdriver;
-	   // getElementById('u_0_11')= getting value for same element
-	   	//change element type and value, id = attribute here, changing id value to 300
-	   	
-		js .executeScript("document.getElementById('u_0_11').setAttribute('id', '300')");
-		result.setStatus(0);
-	    result.setMessage("custom step Executed successfully");
-	   return result;
 	  }
 	
 		
