@@ -41,7 +41,8 @@ public class UpdateQuery {
 			    myStmt.close();
 
 		} catch (Exception exc) {
-			exc.printStackTrace();
+			result.setStatus(ResultConstants.FAILURE);
+			result.setMessage(exc.getMessage());
 		}
 		return result;
 
