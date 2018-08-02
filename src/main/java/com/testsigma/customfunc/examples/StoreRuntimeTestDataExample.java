@@ -1,10 +1,10 @@
 package com.testsigma.customfunc.examples;
 
 import com.testsigma.customfunc.common.CustomTestData;
-import com.testsigma.testengine.custom.TestsigmaCustomFunction;
+import com.testsigma.customfunc.common.TestsigmaCustomFunctions;
 import com.testsigma.testengine.exceptions.TestEngineException;
 
-public class StoreRuntimeTestDataExample extends TestsigmaCustomFunction {
+public class StoreRuntimeTestDataExample extends TestsigmaCustomFunctions {
 
 	@CustomTestData
 	public String storeRuntimeTestData(String name, String value) throws TestEngineException {

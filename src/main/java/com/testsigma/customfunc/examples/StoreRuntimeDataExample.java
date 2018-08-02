@@ -1,12 +1,13 @@
 package com.testsigma.customfunc.examples;
 
 import com.testsigma.customfunc.common.CustomTestStep;
+import com.testsigma.customfunc.common.TestsigmaCustomFunctions;
 import com.testsigma.customfunc.result.ResultConstants;
 import com.testsigma.customfunc.result.TestStepResult;
-import com.testsigma.testengine.custom.TestsigmaCustomFunction;
+
 import com.testsigma.testengine.exceptions.TestEngineException;
 
-public class StoreRuntimeDataExample extends TestsigmaCustomFunction {
+public class StoreRuntimeDataExample extends TestsigmaCustomFunctions {
 	@CustomTestStep
 	public TestStepResult storeRuntimeData(String name, String value) throws TestEngineException {
 		TestStepResult result = new TestStepResult();
