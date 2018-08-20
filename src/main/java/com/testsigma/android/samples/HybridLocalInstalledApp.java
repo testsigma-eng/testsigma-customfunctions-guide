@@ -11,12 +11,14 @@ public class HybridLocalInstalledApp {
 		DesiredCapabilities cap = new DesiredCapabilities(); 
 		cap.setCapability("platformName", "Android");
 		cap.setCapability("deviceName", "6cebaa960104");
-		cap.setCapability("appPackage", "com.airasia.mobile");
-		cap.setCapability("appActivity", ".LoginActivity");
+		cap.setCapability("appPackage", "org.wikipedia.alpha");
+		cap.setCapability("appActivity", "org.wikipedia.main.MainActivity");
 		AndroidDriver driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"),cap);
 		driver.launchApp();
-	}
 
+		System.out.println("working fine");
+		driver.quit();
+	}
 }
 
 /*How to find appPackage and appActivity
