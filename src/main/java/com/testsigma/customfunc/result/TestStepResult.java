@@ -2,7 +2,6 @@ package com.testsigma.customfunc.result;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +28,7 @@ public class TestStepResult {
 	private Map<String, String> files;
 	
 	private Map<Object, Object> metadata;
+	private Object output = null;
 	
 	public TestStepResult(Long id,Long environmentId, Long testCaseId,
 			Long tesCaseStepResultId, Long testCaseResultId, Long stepId) {
@@ -41,8 +41,7 @@ public class TestStepResult {
 	}
 
 	private List<TestStepResult> stepResults = new ArrayList<TestStepResult>();
-	
-	private Map<String, String> outputData = new HashMap<String, String>();
+
 	/**
 	 * This is a default constructor for Test case step class.
 	 */
@@ -52,8 +51,14 @@ public class TestStepResult {
 	public TestStepResult(Long stepId) {
 		this.stepId=stepId;
 	}
-
 	
+	public Object getOutput() {
+		return output;
+	}
+
+	public void setOutput(Object output) {
+		this.output = output;
+	}
 
 	public boolean getSkipExe() {
 		return skipExe;
@@ -152,14 +157,6 @@ public class TestStepResult {
 
 	public void setParentId(Long parentId) {
 		this.parentId = parentId;
-	}
-
-	public Map<String, String> getOutputData() {
-		return outputData;
-	}
-
-	public void setOutputData(Map<String, String> outputData) {
-		this.outputData = outputData;
 	}
 
 	public Integer getErrorCode() {
