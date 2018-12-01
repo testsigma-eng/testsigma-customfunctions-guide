@@ -63,4 +63,7 @@ public abstract class TestsigmaCustomFunctions {
 
 	}
 
+	public void setTestDataParameterValue(String name, String value) throws  TestEngineException  {
+			
+	}
 }
