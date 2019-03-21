@@ -40,7 +40,12 @@ public abstract class TestsigmaCustomFunctions {
 		return testData;
 
 	}
-
+	
+	public String getTestDataParamterValue(String name) {
+		
+		return null;
+	
+	}
 	public void setRuntimeData(String name, String value) throws TestEngineException   {
 
 		RuntimeData runtimedata = new RuntimeData();
@@ -50,14 +55,15 @@ public abstract class TestsigmaCustomFunctions {
 	
 	public TestDataEntity getTestData(String name) throws  TestEngineException  {
 		
-		return new TestDataProvider().getTestDataEntity(name, settings);
+		return null;
 		
 	}
 	
 	public void setTestData(TestDataEntity testData) throws TestEngineException   {
 
-		 new TestDataProvider().updateTestdata(testData, settings);
-
 	}
 
+	public void setTestDataParameterValue(String name, String value) throws  TestEngineException  {
+			
+	}
 }
