@@ -21,10 +21,11 @@ import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.testsigma.customfunc.common.CustomTestStep;
+import com.testsigma.customfunc.common.TestsigmaCustomFunctions;
 import com.testsigma.customfunc.result.ResultConstants;
 import com.testsigma.customfunc.result.TestStepResult;
 
-public class RestAPIWaitForResponse {
+public class RestAPIWaitForResponse extends TestsigmaCustomFunctions{
 
 	@CustomTestStep
 	public TestStepResult curl(Long executionId, String username, String password) {
@@ -46,7 +47,7 @@ public class RestAPIWaitForResponse {
 			while (ResultConstants.QUEUED.getId() == executionStatus) {
 				Thread.sleep(3000);
 				executionStatus = getExecutionStatus(executionId, runId, username, password);
-				// driver.getTitle();
+				driver.getTitle();
 			}
 			Map<Object, Object> data = new HashMap<Object, Object>();
 			data.put("final status", executionStatus);
