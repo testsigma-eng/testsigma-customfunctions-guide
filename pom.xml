@@ -12,7 +12,7 @@
 		<json.version>20160810</json.version>		
 		<jetty-io.version>9.4.0.RC0</jetty-io.version>
 		<maven.compiler.plugin>3.5.1</maven.compiler.plugin>	
-		<commons.collections.version>3.2.1</commons.collections.version>
+		<commons.collections.version>3.2.2</commons.collections.version>
 	</properties>
 	
 	  <dependencies>
