@@ -9,7 +9,7 @@
     	<jdk.version>1.8</jdk.version>
 		<selenium.version>3.8.1</selenium.version>	
 		<appium.version>5.0.4</appium.version>	
-		<json.version>20160810</json.version>		
+		<json.version>20230227</json.version>		
 		<jetty-io.version>9.4.0.RC0</jetty-io.version>
 		<maven.compiler.plugin>3.5.1</maven.compiler.plugin>	
 		<commons.collections.version>3.2.2</commons.collections.version>
